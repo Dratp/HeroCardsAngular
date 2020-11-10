@@ -42,7 +42,7 @@ namespace AngularHeroCards.Controllers
             else
             {
                  //Login success object userID returned.
-                return new { respone = true, userID = id, reason = "Success" };
+                return new { response = true, playerID = id, reason = "Success" };
             }
         }
 
