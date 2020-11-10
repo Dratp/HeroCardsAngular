@@ -12,9 +12,12 @@ export interface Player {
 
 }
 
-export interface CreatedPlayer {
-  userID?: number;
+export interface PlayerInfo {
+  PlayerID?: number;
   Name: string;
+  password?: string;
+  response?: boolean;
+  reason?: string;
 }
 
 
