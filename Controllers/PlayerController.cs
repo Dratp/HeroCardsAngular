@@ -26,7 +26,24 @@ namespace AngularHeroCards.Controllers
         {
             Player currentPlayer = Player.AssemblePlayer(playerID, gameData);
             return currentPlayer;
+        }
 
+        [HttpGet]
+        [Route("login/{playerName}")]
+        public object GetPlayerID (string playerName)
+        {
+            long id = gameData.GetPlayerID(playerName);
+            
+            if (id < 0)
+            {
+                //Login fail object response false reason string.
+                return new { response = false, reason = "User does not exist." };
+            }
+            else
+            {
+                 //Login success object userID returned.
+                return new { respone = true, userID = id, reason = "Success" };
+            }
         }
 
 

@@ -202,5 +202,6 @@ namespace AngularHeroCards.Services
             return ShopCards;
         }
 
+
     }
 }
