@@ -3,12 +3,12 @@ import { Deck } from "./deck";
 import { HeroActionCard } from "./hero-action-card";
 
 export interface Player {
-  PlayerID: string;
+  PlayerID: number;
   Name: string;
   Currency: number;
-  Dolls: HeroDoll[];
-  Deck: Deck[];
-  Collection: HeroActionCard[];
+  Dolls?: HeroDoll[];
+  Decks?: Deck[];
+  Collection?: HeroActionCard[];
 
 }
 
