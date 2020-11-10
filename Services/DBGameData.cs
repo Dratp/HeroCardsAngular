@@ -13,13 +13,13 @@ namespace AngularHeroCards.Services
 {
     public class DBGameData : IGameData
     {
-        // const string server = "7RP7Q13\\SQLEXPRESS;Database=HeroCards;user id = csharp; password=abc123";
+        // const string server = "7RP7Q13\\SQLEXPRESS;Database=HeroCards;user id=csharp;password=abc123";
 
         IDbConnection db;
 
         public DBGameData(IConfiguration config)
         {
-            db = new SqlConnection(config.GetConnectionString("DbServer"));
+            db = new SqlConnection(config.GetConnectionString("Heizer"));
         }
 
         public void CreateDeck(Deck deck, long playerID)

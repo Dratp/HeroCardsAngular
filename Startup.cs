@@ -22,11 +22,11 @@ namespace AngularHeroCards
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddTransient<IGameData, DBGameData>();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
-                services.AddTransient<IGameData, DBGameData>();
             });
         }
 
