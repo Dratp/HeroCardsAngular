@@ -12,6 +12,11 @@ export interface Player {
 
 }
 
+export interface CreatedPlayer {
+  userID?: number;
+  Name: string;
+}
+
 
 
      //public static Player AssemblePlayer(long playerID, IGameData data)
