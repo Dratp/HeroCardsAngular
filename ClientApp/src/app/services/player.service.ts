@@ -25,7 +25,7 @@ export class PlayerService {
 
 
   authplayer(name: string): Observable<PlayerInfo> {
-    return this.http.get<PlayerInfo>(`${this.apiUrl}/${name}`)
+    return this.http.get<PlayerInfo>(`${this.apiUrl}/login/${name}`)
   }
 
   signIn(name: string) {
