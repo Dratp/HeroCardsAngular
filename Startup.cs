@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using AngularHeroCards.Services;
 
 namespace AngularHeroCards
 {
@@ -25,6 +26,7 @@ namespace AngularHeroCards
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
+                services.AddTransient<IGameData, DBGameData>();
             });
         }
 
