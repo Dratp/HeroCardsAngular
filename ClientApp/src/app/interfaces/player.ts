@@ -13,7 +13,7 @@ export interface Player {
 }
 
 export interface PlayerInfo {
-  playerID?: number;
+  PlayerID?: number;
   Name: string;
   password?: string;
   response?: boolean;
