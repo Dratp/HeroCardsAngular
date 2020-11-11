@@ -31,7 +31,8 @@ import { LogInComponent } from './components/log-in/log-in.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'login', component: LogInComponent }
+      { path: 'login', component: LogInComponent },
+      {path: 'player', component: PlayerComponent}
     ])
   ],
   providers: [],

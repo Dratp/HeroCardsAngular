@@ -13,8 +13,8 @@ export interface Player {
 }
 
 export interface PlayerInfo {
-  PlayerID?: number;
-  Name: string;
+  playerID?: number;
+  Name?: string;
   password?: string;
   response?: boolean;
   reason?: string;

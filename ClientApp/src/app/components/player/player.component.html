@@ -1,10 +1,3 @@
-<h1>Please log in:</h1>
-<br />
-<form class="pageLayout">
-  <ng-container *ngIf="!playerInfo.name">
-    <input #nameBox type="text" placeholder="Username" required />
-{{playerService.reason}}
-    <br />
-    <button (click)="login(nameBox.value)">Login</button>
-  </ng-container>
-</form>
+{{playerLogIn.playerID}}
+{{playerService.currentPlayer.Name}}
+Player component

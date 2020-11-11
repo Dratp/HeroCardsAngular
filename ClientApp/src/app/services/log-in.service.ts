@@ -13,7 +13,7 @@ export class LogInService {
   reason: string;
   playerID: number;
 
-  apiUrl = 'api/logIn';
+  apiUrl = 'api/player';
 
   constructor(private http: HttpClient, private route: Router) {
     this.name = "";
@@ -23,20 +23,23 @@ export class LogInService {
   }
 
   authplayer(name: string): Observable<PlayerInfo> {
-    return this.http.get<PlayerInfo>(`${this.apiUrl}/login/${name}`)
+    console.log(name)
+    return this.http.get<PlayerInfo>(this.apiUrl + `/login/${name}`)
   }
 
   signIn(name: string) {
+
+    console.log("sign in at login service")
     this.authplayer(name).subscribe(results => this.setPlayer(results));
   }
 
   setPlayer(playerInfo: PlayerInfo) {
-    this.playerID = playerInfo.PlayerID
+    this.playerID = playerInfo.playerID
     this.response = playerInfo.response
     this.reason = playerInfo.reason
-    console.log(playerInfo.PlayerID)
+    console.log(playerInfo.playerID)
     if (playerInfo.response) {
-      this.route.navigate([""])
+      this.route.navigate(["player"])
     }
   }
 

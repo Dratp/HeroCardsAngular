@@ -13,7 +13,7 @@ export class LogInComponent {
 
   playerInfo: PlayerInfo;
   /** logIn ctor */
-  constructor(private route: Router, private logIn: LogInService) {
+  constructor(private route: Router, private playerLogIn: LogInService)  {
     this.playerInfo = { Name: " " };
   }
 
@@ -23,7 +23,7 @@ export class LogInComponent {
 
   login(name: string) {
     if (name != "") {
-      this.logIn.signIn(name);
+      this.playerLogIn.signIn(name);
     }
 
   }
