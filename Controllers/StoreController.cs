@@ -59,7 +59,5 @@ namespace AngularHeroCards.Controllers
         }
 
 
-
-
     }
 }
