@@ -11,6 +11,7 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 
 import { PlayerComponent } from './components/player/player.component';
+import { DisplaycardComponent } from './components/displaycard/displaycard.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PlayerComponent } from './components/player/player.component';
     CounterComponent,
     FetchDataComponent,
     PlayerComponent,
+    DisplaycardComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -29,7 +31,8 @@ import { PlayerComponent } from './components/player/player.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'login', component: PlayerComponent }
+      { path: 'login', component: PlayerComponent },
+      { path: 'displaycard', component: DisplaycardComponent }
     ])
   ],
   providers: [],

@@ -1,0 +1,31 @@
+<div class="HeroCard">
+  <div>
+    <span class="cardName">
+      {{card.cardName}}
+    </span>
+    <span>Cost:</span>
+    <span *ngIf="card.ManaCost > 0"> Mana Cost ={{card.ManaCost}}</span>
+    <span *ngIf="card.HealthCost > 0"> Heatlh Cost = {{card.HealthCost}}</span>
+    <span *ngIf="card.TimeCost > 0"> Time Cost ={{card.TimeCost}}</span>
+  </div>
+  <div class="description">
+    You {{card.description}} {{card.Target}}
+  </div>
+  <div class="Damage">
+    <span *ngIf="card.PhysAtk > 0"> Phyiscal {{card.PhysAtk}}</span>
+    <span *ngIf="card.MagicAtk > 0">Magical {{card.MagicAtk}}</span>
+  </div>
+  <div class="effects">
+    <div class="PhysEffects">
+      <div *ngIf="card.Slashing"> Cuases {{card.SlashBleed}} dmg for {{card.SlashBleedDuration}} turn(s)</div>
+      <div *ngIf="card.Piercing"> Ignores {{card.PierceArmor}}% of armor value</div>
+      <div *ngIf="Bludgeon"> Lowers Magic resistance by {{card.BludgeonLower}} for {{card.BludgeonLower.Duration}} turns</div>
+
+
+    </div>
+    <div class="MagicEffects">
+
+    </div>
+
+  </div>
+</div>
