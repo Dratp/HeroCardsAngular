@@ -19,7 +19,7 @@ namespace AngularHeroCards.Services
 
         public DBGameData(IConfiguration config)
         {
-            db = new SqlConnection(config.GetConnectionString("Heizer"));
+            db = new SqlConnection(config.GetConnectionString("kathryn"));
         }
 
         public void CreateDeck(Deck deck, long playerID)
