@@ -42,7 +42,7 @@ namespace AngularHeroCards.Controllers
 
 
         [HttpGet]
-        [Route("cards/ClearShop")]
+        [Route("cards/ClearCardShop")]
         public object ClearShop()
         {
             // Clears all cards out of the shop
@@ -57,6 +57,7 @@ namespace AngularHeroCards.Controllers
         {
             return gameData.AllShopCards();
         }
+
 
 
     }

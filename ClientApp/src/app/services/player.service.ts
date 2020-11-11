@@ -33,10 +33,10 @@ export class PlayerService {
   }
 
   setPlayer(playerInfo: PlayerInfo) {
-    this.playerID = playerInfo.playerID
+    this.playerID = playerInfo.PlayerID
     this.response = playerInfo.response
     this.reason = playerInfo.reason
-    console.log(playerInfo.playerID)
+    console.log(playerInfo.PlayerID)
     if (playerInfo.response) {
       this.route.navigate([""])
     }
