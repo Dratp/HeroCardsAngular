@@ -15,7 +15,7 @@ export class PlayerComponent implements OnInit {
 
   /** player ctor */
   constructor(private playerService: PlayerService, private route: Router) {
-    this.playerInfo = { Name : " "};
+   
   }
 
 
@@ -23,9 +23,7 @@ export class PlayerComponent implements OnInit {
   }
 
   login(name: string) {
-    if (name != "") {
-      this.playerService.signIn(name);
-    }
+
 
   }
 }
