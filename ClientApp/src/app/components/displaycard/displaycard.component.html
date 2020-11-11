@@ -1,0 +1,49 @@
+<div class="HeroCard">
+  <div>
+    <span class="cardName">
+      {{card.cardName}}
+    </span>
+    <span>
+      casting time: {{card.PlaySpeed}}
+    </span>
+    <div>
+      <span>Cost:</span>
+      <span *ngIf="card.ManaCost > 0"> Mana Cost ={{card.ManaCost}}</span>
+      <span *ngIf="card.HealthCost > 0"> Heatlh Cost = {{card.HealthCost}}</span>
+      <span *ngIf="card.TimeCost > 0"> Time Cost ={{card.TimeCost}}</span>
+    </div>
+  </div>
+  <div class="description">
+    You {{card.description}} {{card.Target}}
+  </div>
+  <div class="Damage">
+    <span *ngIf="card.PhysAtk > 0"> Phyiscal {{card.PhysAtk}}</span>
+    <span *ngIf="card.MagicAtk > 0">Magical {{card.MagicAtk}}</span>
+  </div>
+  <div class="effects">
+    <div class="PhysEffects">
+      <div *ngIf="card.Slashing"> Cuases {{card.SlashBleed}} dmg for {{card.SlashBleedDuration}} turn(s)</div>
+      <div *ngIf="card.Piercing"> Ignores {{card.PierceArmor}}% of armor value</div>
+      <div *ngIf="card.Bludgeon"> Lowers Magic resistance by {{card.BludgeonLower}} for {{card.BludgeonLowerDuration}} turns</div>
+      <div *ngIf="card.Shield">
+        <div ngIf*="card.ShieldArmor > 0">
+          Creates a shield raising armor by {{card.ShieldArmor}} for {{card.ShieldDuration}} turns
+        </div>
+        <div ngIf*="card.ShieldResistance > 0">
+          Creates a shield raising magic resistance by {{card.ShieldResistance}} for {{card.ShieldDuration}} turns
+        </div>
+        <div *ngIf="card.Crush"> Lowers Magic resistance by {{card.CrushLower}} for {{card.CrushLowerDuration}} turns</div>
+      </div>
+    </div>
+    <div class="MagicEffects">
+      <div *ngIf="card.Fire"> Burn dmg of {{card.FireBurn}} for {{card.FireBurnDuration}} turns</div>
+      <div *ngIf="card.Electric"> Your next action will happen {{card.ElectricSpeed}}% faster</div>
+      <div *ngIf="card.Ice"> The next action of your target will happen {{card.IceSpeed}}% slower</div>
+      <div *ngIf="card.Earth"> Create a shield that will absorb the next {{card.EarthAbsorb}} dmg</div>
+      <div *ngIf="card.Holy"> Heals the target(s) for {{card.HolyHeal}}</div>
+      <div *ngIf="card.Dark"> {{card.DarkSteal}}% of the dmg this action does will heal you</div>
+      <div *ngIf="card.Time"> Target's next action will happen {{card.TimeSpeed}}% faster</div>
+    </div>
+
+  </div>
+</div>
