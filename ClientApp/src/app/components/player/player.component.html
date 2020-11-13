@@ -1,10 +1,7 @@
-<h1>Please log in:</h1>
-<br />
-<form class="pageLayout">
-  <ng-container *ngIf="!playerInfo.name">
-    <input #nameBox type="text" placeholder="Username" required />
-{{playerService.reason}}
-    <br />
-    <button (click)="login(nameBox.value)">Login</button>
-  </ng-container>
-</form>
+  
+Name: {{playerService?.currentPlayer?.name}} <br /> 
+Currency: {{playerService.currentPlayer?.currency}} <br /> 
+PlayerID: {{playerService.currentPlayer?.playerID}} <br />
+Collection:
+ <div *ngFor ="let item of playerService.currentPlayer?.collection" > <span style="margin-left:3em"> {{item?.cardName}}</span></div>
+

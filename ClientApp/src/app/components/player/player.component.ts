@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { PlayerService } from '../../services/player.service';
-import { PlayerInfo } from '../../interfaces/player';
+import { PlayerInfo, Player } from '../../interfaces/player';
 import { Router } from '@angular/router';
+import { LogInService } from '../../services/log-in.service';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-player',
@@ -11,19 +13,22 @@ import { Router } from '@angular/router';
 
 /** player component*/
 export class PlayerComponent implements OnInit {
-  playerInfo: PlayerInfo;
 
-  /** player ctor */
-  constructor(private playerService: PlayerService, private route: Router) {
-   
+  playInfo: PlayerInfo
+  playerID: number;
+  
+
+  constructor(private playerLogIn: LogInService, private playerService: PlayerService, private router: Router) {
+    this.playerID = playerLogIn.playerID
   }
-
 
   ngOnInit() {
+    console.log(this.playerLogIn.playerID);
+    this.playerService.getPlayer(this.playerLogIn.playerID);
+
+   
+
   }
 
-  login(name: string) {
-
-
-  }
+  
 }

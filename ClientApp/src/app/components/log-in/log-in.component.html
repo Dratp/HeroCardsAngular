@@ -3,7 +3,7 @@
 <form class="pageLayout">
   <ng-container *ngIf="!playerInfo.name">
     <input #nameBox type="text" placeholder="Username" required />
-    {{playerLogin.reason}}
+    {{playerLogIn.reason}}
     <br />
     <button (click)="login(nameBox.value)">Login</button>
   </ng-container>

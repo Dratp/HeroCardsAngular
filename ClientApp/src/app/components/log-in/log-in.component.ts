@@ -10,11 +10,11 @@ import { PlayerInfo } from '../../interfaces/player';
 })
 /** logIn component*/
 export class LogInComponent {
-
+  
   playerInfo: PlayerInfo;
   /** logIn ctor */
-  constructor(private route: Router, private logIn: LogInService) {
-    this.playerInfo = { Name: " " };
+  constructor(private route: Router, private playerLogIn: LogInService)  {
+    this.playerInfo = { name: "" };
   }
 
 
@@ -23,7 +23,7 @@ export class LogInComponent {
 
   login(name: string) {
     if (name != "") {
-      this.logIn.signIn(name);
+      this.playerLogIn.signIn(name);
     }
 
   }
