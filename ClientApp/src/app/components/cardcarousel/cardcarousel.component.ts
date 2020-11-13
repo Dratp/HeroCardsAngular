@@ -21,4 +21,12 @@ export class CardcarouselComponent {
     this.amount = 4;
   }
 
+  plusOne() {
+    this.start++;
+  }
+
+  minusOne() {
+    this.start--;
+  }
+
 }
