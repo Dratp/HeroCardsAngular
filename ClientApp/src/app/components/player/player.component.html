@@ -1,3 +1,7 @@
-{{playerLogIn.playerID}}
-{{playerService.currentPlayer.Name}}
-Player component
+  
+Name: {{playerService?.currentPlayer?.name}} <br /> 
+Currency: {{playerService.currentPlayer?.currency}} <br /> 
+PlayerID: {{playerService.currentPlayer?.playerID}} <br />
+Collection:
+ <div *ngFor ="let item of playerService.currentPlayer?.collection" > <span style="margin-left:3em"> {{item?.cardName}}</span></div>
+

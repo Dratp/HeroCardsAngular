@@ -19,7 +19,7 @@ export class LogInService {
     this.name = "";
     this.response = false;
     this.reason = "";
-    this.playerID = 0;
+    this.playerID = 3;
   }
 
   authplayer(name: string): Observable<PlayerInfo> {

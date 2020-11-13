@@ -14,20 +14,43 @@ export class PlayerService {
 
 
   constructor(private http: HttpClient, playerLogIn: LogInService) {
-    this.player = {Name : ' ', PlayerID : 0, Currency : 0  };
+
   }
 
-  apiUrl = '/api/player/' ;
+  apiUrl = '/api/player';
 
-  playerAPICall(playerID: number):Observable<Player> {
-   return  this.http.get<Player>(this.apiUrl + {playerID})
+  getPlayer(playerID: number){
+    this.http.get<Player>(`${this.apiUrl}/${playerID}`).subscribe(result =>
+    {
+      console.log(result)
+      return this.currentPlayer = result;
+    })
+   
   }
 
-  playerSubscribe(playerID: number) {
-   return this.playerAPICall(this.playerID).subscribe(results => this.setCurrentPlayer(results))
-  }
 
-  setCurrentPlayer(player: Player) {
-    return this.currentPlayer = player
-  }
+  //getPlayerData(playerID: number) {
+  //  this.getPlayer(playerID).subscribe(results => { this.setPlayer(results) })
+  //  console.log('playerID at getPlayerData', playerID)
+
+  //}
+
+  //setPlayer(signInPlayer: Player) {
+  //  this.currentPlayer = signInPlayer;
+
+  //  console.log(this.currentPlayer.name + "at setPlayer")
+  //}
+
+
+  //playerAPICall(playerID: number):Observable<Player> {
+  // return  this.http.get<Player>(this.apiUrl + {playerID})
+  //}
+
+  //playerSubscribe(playerID: number) {
+  // return this.playerAPICall(this.playerID).subscribe(results => this.setCurrentPlayer(results))
+  //}
+
+  //setCurrentPlayer(player: Player) {
+  //  return this.currentPlayer = player
+  //}
 }
