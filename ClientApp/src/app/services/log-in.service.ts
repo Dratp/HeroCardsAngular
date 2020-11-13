@@ -19,7 +19,7 @@ export class LogInService {
     this.name = "";
     this.response = false;
     this.reason = "";
-    this.playerID = 3;
+    this.playerID = 3;  // Default login to Ben
   }
 
   authplayer(name: string): Observable<PlayerInfo> {
