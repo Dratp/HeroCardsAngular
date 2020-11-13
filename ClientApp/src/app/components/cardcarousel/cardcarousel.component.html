@@ -1,0 +1,26 @@
+<div style="border: 3px solid">
+  <div style="border: 1px solid red">
+    cardcarousel Component <br />
+    <span *ngIf="start > 0">
+      <button (click)="minusOne()"><</button>
+    </span>
+    <span *ngIf="start < cardlist.length - amount">
+      <button (click)="plusOne()">></button>
+    </span>
+  </div>
+
+  <div>
+    <span class="card1">
+      <app-displaycard [card]="cardlist[start]"></app-displaycard>
+    </span>
+    <span class="card2">
+      <app-displaycard [card]="cardlist[start+1]"></app-displaycard>
+    </span>
+    <span class="card3">
+      <app-displaycard [card]="cardlist[start+2]"></app-displaycard>
+    </span>
+    <span class="card4">
+      <app-displaycard [card]="cardlist[start+3]"></app-displaycard>
+    </span>
+  </div>
+</div>

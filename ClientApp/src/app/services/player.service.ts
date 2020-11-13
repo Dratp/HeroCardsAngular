@@ -22,7 +22,7 @@ export class PlayerService {
   getPlayer(playerID: number){
     this.http.get<Player>(`${this.apiUrl}/${playerID}`).subscribe(result =>
     {
-      console.log(result)
+      console.log(result);
       return this.currentPlayer = result;
     })
    

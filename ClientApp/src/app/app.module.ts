@@ -12,6 +12,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { PlayerComponent } from './components/player/player.component';
 import { DisplaycardComponent } from './components/displaycard/displaycard.component';
 import { LogInComponent } from './components/log-in/log-in.component';
+import { CardcarouselComponent } from './components/cardcarousel/cardcarousel.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LogInComponent } from './components/log-in/log-in.component';
     FetchDataComponent,
     PlayerComponent,
     DisplaycardComponent,
-    LogInComponent
+    LogInComponent,
+    CardcarouselComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -31,9 +33,8 @@ import { LogInComponent } from './components/log-in/log-in.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
       { path: 'login', component: LogInComponent },
-      {path: 'player', component: PlayerComponent}
+      { path: 'player', component: PlayerComponent }
 
     ])
   ],
