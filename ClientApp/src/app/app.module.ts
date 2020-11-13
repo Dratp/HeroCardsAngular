@@ -9,8 +9,8 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
-
 import { PlayerComponent } from './components/player/player.component';
+import { DisplaycardComponent } from './components/displaycard/displaycard.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 
 @NgModule({
@@ -21,6 +21,7 @@ import { LogInComponent } from './components/log-in/log-in.component';
     CounterComponent,
     FetchDataComponent,
     PlayerComponent,
+    DisplaycardComponent,
     LogInComponent
   ],
   imports: [
@@ -33,6 +34,7 @@ import { LogInComponent } from './components/log-in/log-in.component';
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'login', component: LogInComponent },
       {path: 'player', component: PlayerComponent}
+
     ])
   ],
   providers: [],
