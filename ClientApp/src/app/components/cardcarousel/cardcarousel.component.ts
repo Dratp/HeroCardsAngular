@@ -11,14 +11,17 @@ export class CardcarouselComponent {
   @Input() cardlist: HeroActionCard[];
   start: number;
   amount: number;
+  numbers: number[];
 
     constructor() {
-
+      
     }
 
   ngOnInit() {
     this.start = 0;
+    this.numbers = [];
     this.amount = 4;
+    this.fillnumbers();
   }
 
   plusOne() {
@@ -27,6 +30,12 @@ export class CardcarouselComponent {
 
   minusOne() {
     this.start--;
+  }
+
+  fillnumbers() {
+    for (let i = 0; i < this.amount; i++) {
+      this.numbers.push(i);
+    }
   }
 
 }
