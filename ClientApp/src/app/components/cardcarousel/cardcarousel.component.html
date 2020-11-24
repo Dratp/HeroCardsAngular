@@ -7,11 +7,16 @@
     <span *ngIf="start < cardlist.length - amount">
       <button (click)="plusOne()">></button>
     </span>
+    <span>
+      card equals {{chosenCard}}
+    </span>
   </div>
 
   <div>
-    <span *ngFor="let num of numbers">
+    <span *ngFor="let num of numbers" (click)="onSelectCard(start + num)">
       <app-displaycard [card]="cardlist[start + num]"></app-displaycard>
     </span>
   </div>
+
+
 </div>

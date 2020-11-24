@@ -8,4 +8,7 @@ Collection:
 <!--<div *ngFor="let item of playerService.currentPlayer?.collection"> <span style="margin-left:3em"> <app-displaycard [card]="item"></app-displaycard> </span></div>
   -->
 
-<app-cardcarousel [cardlist]="playerService.currentPlayer?.collection"></app-cardcarousel>
+<app-cardcarousel [cardlist]="playerService.currentPlayer?.collection" (theCard)="DisplayCard($event)"></app-cardcarousel>
+<div>
+  <app-displaycard [card]="theCard"></app-displaycard>
+</div>
