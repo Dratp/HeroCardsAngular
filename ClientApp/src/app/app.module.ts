@@ -13,6 +13,7 @@ import { PlayerComponent } from './components/player/player.component';
 import { DisplaycardComponent } from './components/displaycard/displaycard.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { CardcarouselComponent } from './components/cardcarousel/cardcarousel.component';
+import { CardshopComponent } from './components/cardshop/cardshop.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CardcarouselComponent } from './components/cardcarousel/cardcarousel.co
     PlayerComponent,
     DisplaycardComponent,
     LogInComponent,
-    CardcarouselComponent
+    CardcarouselComponent,
+    CardshopComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -34,7 +36,8 @@ import { CardcarouselComponent } from './components/cardcarousel/cardcarousel.co
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'login', component: LogInComponent },
-      { path: 'player', component: PlayerComponent }
+      { path: 'player', component: PlayerComponent },
+      { path: 'cardshop', component: CardshopComponent }
 
     ])
   ],
