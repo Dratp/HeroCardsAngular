@@ -1,4 +1,5 @@
 <p>cardshop works!</p>
+{{player.playerID}}{{player.player}}{{player.currentplayer}}
 <app-cardcarousel [cardlist]="cardShop.cardsForSale" (theCard)="DisplayCard($event)"></app-cardcarousel>
 
 <button (click)="Refresh()">Refresh</button> {{amount}} <button (click)="AddOne()">+</button>

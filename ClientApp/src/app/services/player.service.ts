@@ -3,6 +3,7 @@ import { LogInService } from './log-in.service';
 import { HttpClient } from '@angular/common/http';
 import { Player } from './../interfaces/player';
 import { Observable } from 'rxjs';
+import { CardshopService } from './cardshop.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class PlayerService {
   player: Player;
 
 
-  constructor(private http: HttpClient, playerLogIn: LogInService) {
+  constructor(private http: HttpClient, playerLogIn: LogInService, private cardshop: CardshopService) {
 
   }
 
@@ -25,7 +26,7 @@ export class PlayerService {
       console.log(result);
       return this.currentPlayer = result;
     })
-   
+    this.cardshop.PopulatePlayerCardShop(playerID);
   }
 
 

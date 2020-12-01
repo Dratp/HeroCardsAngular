@@ -14,6 +14,7 @@ export class CardshopService {
 
   apiUrl = '/api/Store';
 
+  // Leaving this working code for test purposes can test a shop with no player logged in.
   PopulateStore() {
     this.GetCards().subscribe(results => this.cardsForSale = results);
   }
@@ -34,4 +35,24 @@ export class CardshopService {
     return (this.http.get<HeroActionCard[]>(`${this.apiUrl}/cards/${num}`));
   }
 
+  // This is production for a player logged into the game.  Oringally had an issue where all players shared the same card shop.
+  PopulatePlayerCardShop(playerID: number) {
+    this.GetCardsForPlayer(playerID).subscribe(results => this.cardsForSale = results);
+  }
+
+  GetCardsForPlayer(playerID: number) {
+    return (this.http.get<HeroActionCard[]>(`${this.apiUrl}/cards/CardShop{playerID}`));
+  }
+
+  RefreshPlayerStore(num: number, playerID: number) {
+    this.ClearPlayerShop(playerID).subscribe(results => this.GetNewCardsForPlayer(num, playerID).subscribe(results => this.cardsForSale = results));
+  }
+
+  ClearPlayerShop(playerID: number) {
+    return (this.http.get<{ bool, string }>(`${this.apiUrl}/cards/ClearCardShop/${playerID}`));
+  }
+
+  GetNewCardsForPlayer(num: number, playerID: number) {
+    return (this.http.get<HeroActionCard[]>(`${this.apiUrl}/cards/${num}/${playerID}`));
+  }
 }
