@@ -3,3 +3,10 @@
 <app-cardcarousel [cardlist]="cardShop.cardsForSale" (theCard)="DisplayCard($event)"></app-cardcarousel>
 
 <button (click)="Refresh()">Refresh</button> {{amount}} <button (click)="AddOne()">+</button>
+
+ <div>
+  <app-displaycard [card]="theCard"></app-displaycard>
+   <div *ngIf="theCard != null">
+     <button (click)="BuyCard">Buy it</button>
+   </div>
+ </div>

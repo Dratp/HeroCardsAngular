@@ -25,10 +25,14 @@ namespace AngularHeroCards.Services
         public HeroActionCard GetCardByCollectionID(long playerID, long collectionID);
         public void AddCardToCollection(long playerID, HeroActionCard card);
         public HeroActionCard GetCardFromLibrary(long cardID);
-        public void AddCardToShop(HeroActionCard card);
+        public void AddCardToShop(HeroActionCard card);  // mark for removal
         public void DeleteCardFromShop(HeroActionCard card);
-        public void ClearShop();
-        public List<HeroActionCard> AllShopCards();
+        public void ClearShop();  // mark for removal
+        public List<HeroActionCard> AllShopCards();  // mark for removal
+        public List<HeroActionCard> PlayersShopCards(long playerID);
+        public void ClearPlayerCardShop(long playerID);
+        public void AddCardToPlayerCardShop(HeroActionCard card, long playerID);
+
 
     }
 }

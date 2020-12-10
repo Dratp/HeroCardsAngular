@@ -202,6 +202,23 @@ namespace AngularHeroCards.Services
             return ShopCards;
         }
 
+        public List<HeroActionCard> PlayersShopCards(long playerID)
+        {
+            List<HeroActionCard> ShopCards = new List<HeroActionCard>();
+            ShopCards = db.Query<HeroActionCard>($"select * from ShopCards join HeroActionCard on ShopCards.card_id = HeroActionCard.Card_id where player_id = {playerID}").AsList<HeroActionCard>();
+            return ShopCards;
+        }
+
+        public void ClearPlayerCardShop(long playerID)
+        {
+            db.Query($"Delete from ShopCards where player_id = {playerID}");
+        }
+
+        public void AddCardToPlayerCardShop(HeroActionCard card, long playerID)
+        {
+            db.Query($"insert into ShopCards (card_id, player_id) Values ({card.card_id}, {playerID})");
+        }
+
 
     }
 }

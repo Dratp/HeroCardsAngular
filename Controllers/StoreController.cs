@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using AngularHeroCards.Models;
+﻿using AngularHeroCards.Models;
 using AngularHeroCards.Services;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
 
 namespace AngularHeroCards.Controllers
 {
@@ -48,7 +45,7 @@ namespace AngularHeroCards.Controllers
             // Clears all cards out of the shop
             gameData.ClearShop();
 
-            return new { response = true,  result = "Card Shop is now empty"};
+            return new { response = true, result = "Card Shop is now empty" };
         }
 
         [HttpGet]
@@ -58,7 +55,22 @@ namespace AngularHeroCards.Controllers
             return gameData.AllShopCards();
         }
 
+        [HttpGet]
+        [Route("cards/CardShop/{playerID}")]
+        public List<HeroActionCard> GetPlayersCurrentShopCards(long playerID)
+        {
+            return gameData.PlayersShopCards(playerID);
+        }
 
+        [HttpGet]
+        [Route("cards/ClearCardShop/{playerID}")]
+        public object ClearPlayerCardShop(long playerID)
+        {
+            // Clears all cards out of the shop
+            gameData.ClearPlayerCardShop(playerID);
+
+            return new { response = true, result = "Card Shop is now empty" };
+        }
 
     }
 }
