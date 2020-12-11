@@ -9,7 +9,7 @@ export class CardshopService {
   cardsForSale: HeroActionCard[];
 
   constructor(private http: HttpClient) {
-    this.PopulateStore();
+    this.cardsForSale = [];
   }
 
   apiUrl = '/api/Store';
@@ -41,18 +41,21 @@ export class CardshopService {
   }
 
   GetCardsForPlayer(playerID: number) {
-    return (this.http.get<HeroActionCard[]>(`${this.apiUrl}/cards/CardShop{playerID}`));
+    return (this.http.get<HeroActionCard[]>(`${this.apiUrl}/cards/CardShop/${playerID}`));
   }
 
   RefreshPlayerStore(num: number, playerID: number) {
+    console.log("Refresh player store called");
     this.ClearPlayerShop(playerID).subscribe(results => this.GetNewCardsForPlayer(num, playerID).subscribe(results => this.cardsForSale = results));
   }
 
   ClearPlayerShop(playerID: number) {
+    console.log("Clear Player Shop called");
     return (this.http.get<{ bool, string }>(`${this.apiUrl}/cards/ClearCardShop/${playerID}`));
   }
 
   GetNewCardsForPlayer(num: number, playerID: number) {
+    console.log("Get New Cards for player called");
     return (this.http.get<HeroActionCard[]>(`${this.apiUrl}/cards/${num}/${playerID}`));
   }
 }

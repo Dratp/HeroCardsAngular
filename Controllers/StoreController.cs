@@ -72,5 +72,25 @@ namespace AngularHeroCards.Controllers
             return new { response = true, result = "Card Shop is now empty" };
         }
 
+        [HttpGet]
+        [Route("cards/{numberOfCards}/{playerID}")]
+        public List<HeroActionCard> StockPlayerCardStore(int numberOfCards, long playerID)
+        {
+            Random rand = new Random();
+
+            // Pulls all possbile cards
+            List<HeroActionCard> fullLibrary = gameData.GetLibrary();
+
+            // Selects X random cards and adds them to the datbase that holds the cards in the shop
+            for (int i = 0; i < numberOfCards; i++)
+            {
+                gameData.AddCardToPlayerCardShop(fullLibrary[rand.Next(0, fullLibrary.Count)], playerID);
+            }
+
+            // Returns all the cards in the database that the store currently has.
+            return gameData.AllShopCards();
+        }
+
+
     }
 }

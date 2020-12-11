@@ -16,7 +16,7 @@ export class CardshopComponent implements OnInit {
   playerID: number;
   theCard: HeroActionCard;
 
-  constructor(private player: PlayerService, private cardShop: CardshopService) { }
+  constructor(private playerService: PlayerService, private cardShop: CardshopService) { }
 
   ngOnInit() {
     this.startAmount = 3;
@@ -24,7 +24,7 @@ export class CardshopComponent implements OnInit {
   }
 
   Refresh(amount) {
-    this.cardShop.RefreshStore(this.amount);
+    this.cardShop.RefreshPlayerStore(this.amount, this.playerService.currentPlayer.playerID);
     this.ResetAmount();
   }
 

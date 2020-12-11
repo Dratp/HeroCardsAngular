@@ -4,8 +4,9 @@ Currency: {{playerService.currentPlayer?.currency}}
 <br />
 PlayerID: {{playerService.currentPlayer?.playerID}}
 <br />
-Collection:
-<!--<div *ngFor="let item of playerService.currentPlayer?.collection"> <span style="margin-left:3em"> <app-displaycard [card]="item"></app-displaycard> </span></div>
+
+Goto:
+<a class="nav-link text-dark" [routerLink]="['/cardshop']">Card Shop</a><!--<div *ngFor="let item of playerService.currentPlayer?.collection"> <span style="margin-left:3em"> <app-displaycard [card]="item"></app-displaycard> </span></div>
   -->
 
 <app-cardcarousel [cardlist]="playerService.currentPlayer?.collection" (theCard)="DisplayCard($event)"></app-cardcarousel>

@@ -3,6 +3,7 @@ import { Player, PlayerInfo } from '../interfaces/player';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { CardshopService } from './cardshop.service'; 
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class LogInService {
 
   apiUrl = 'api/player';
 
-  constructor(private http: HttpClient, private route: Router) {
+  constructor(private http: HttpClient, private route: Router, private cardShop: CardshopService) {
     this.name = "";
     this.response = false;
     this.reason = "";
@@ -34,12 +35,13 @@ export class LogInService {
   }
 
   setPlayer(playerInfo: PlayerInfo) {
-    this.playerID = playerInfo.playerID
-    this.response = playerInfo.response
-    this.reason = playerInfo.reason
-    console.log(playerInfo.playerID)
+    this.playerID = playerInfo.playerID;
+    this.response = playerInfo.response;
+    this.reason = playerInfo.reason;
+    console.log(playerInfo.playerID);
+    this.cardShop.PopulatePlayerCardShop(this.playerID);
     if (playerInfo.response) {
-      this.route.navigate(["player"])
+      this.route.navigate(["player"]);
     }
   }
 

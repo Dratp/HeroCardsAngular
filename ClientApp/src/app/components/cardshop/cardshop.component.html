@@ -1,12 +1,16 @@
 <p>cardshop works!</p>
-{{player.playerID}}{{player.player}}{{player.currentplayer}}
+Name: {{playerService.currentPlayer?.name}}
+<br />
+Currency: {{playerService.currentPlayer?.currency}}
+<br />
+PlayerID: {{playerService.currentPlayer?.playerID}}
 <app-cardcarousel [cardlist]="cardShop.cardsForSale" (theCard)="DisplayCard($event)"></app-cardcarousel>
 
 <button (click)="Refresh()">Refresh</button> {{amount}} <button (click)="AddOne()">+</button>
 
- <div>
+<div>
   <app-displaycard [card]="theCard"></app-displaycard>
-   <div *ngIf="theCard != null">
-     <button (click)="BuyCard">Buy it</button>
-   </div>
- </div>
+  <div *ngIf="theCard != null">
+    <button (click)="BuyCard">Buy it</button>
+  </div>
+</div>
